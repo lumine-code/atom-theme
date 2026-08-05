@@ -17,6 +17,10 @@
     "url": "https://github.com/lumine-code/atom-theme/issues"
   },
   "license": "MIT",
+  "files": [
+    "spec",
+    "styles"
+  ],
   "engines": {
     "lumine": "^1.0.0"
   },
