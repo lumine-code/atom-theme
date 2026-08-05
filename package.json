@@ -1,0 +1,78 @@
+{
+  "name": "atom-theme",
+  "author": "lumine-code",
+  "version": "1.0.0",
+  "description": "The classic Atom day and night UI and syntax themes.",
+  "keywords": [
+    "classic",
+    "retro",
+    "day-night",
+    "syntax",
+    "angled-tabs",
+    "light",
+    "dark"
+  ],
+  "repository": "https://github.com/lumine-code/atom-theme",
+  "bugs": {
+    "url": "https://github.com/lumine-code/atom-theme/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "lumine": "^1.0.0"
+  },
+  "themes": [
+    {
+      "name": "atom-day-ui",
+      "theme": "ui",
+      "styles": [
+        "styles/ui",
+        "styles/day-ui"
+      ]
+    },
+    {
+      "name": "atom-day-syntax",
+      "theme": "syntax",
+      "styles": "styles/day-syntax"
+    },
+    {
+      "name": "atom-night-ui",
+      "theme": "ui",
+      "styles": [
+        "styles/ui",
+        "styles/night-ui"
+      ]
+    },
+    {
+      "name": "atom-night-syntax",
+      "theme": "syntax",
+      "styles": "styles/night-syntax"
+    }
+  ],
+  "themePacks": [
+    {
+      "name": "Atom",
+      "light": [
+        "atom-day-ui",
+        "atom-day-syntax"
+      ],
+      "dark": [
+        "atom-night-ui",
+        "atom-night-syntax"
+      ]
+    }
+  ],
+  "scripts": {
+    "test": "lumine --test spec",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-n": "^18.2.2",
+    "globals": "^17.7.0",
+    "prettier": "^3.9.6"
+  }
+}
