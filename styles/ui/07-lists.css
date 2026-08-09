@@ -2,7 +2,7 @@
  *
  * The `.generate-list-item-text-color()` Less mixin is expanded per class.
  * Git status colours are not repeated here — core owns them in
- * static/atom-ui/styles/git-status.css. */
+ * static/lumine-ui/styles/git-status.css. */
 
 .list-group,
 .list-tree {
@@ -114,7 +114,7 @@
   background-color: var(--overlay-background-color);
   box-shadow: 0 0 10px var(--base-border-color);
 
-  atom-text-editor {
+  lumine-text-editor {
     margin-bottom: calc(var(--component-padding) / 2);
   }
 

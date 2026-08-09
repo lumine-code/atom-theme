@@ -1,10 +1,10 @@
 /* Modals
  *
- * Core lays the panel out (static/atom-ui/styles/modals.css); the classic look
+ * Core lays the panel out (static/lumine-ui/styles/modals.css); the classic look
  * is a bordered card with a soft drop shadow. The dimmed backdrop is new — it
  * keeps a 500px-wide modal readable over a busy workspace. */
 
-atom-panel.modal,
+lumine-panel.modal,
 .overlay {
   padding: var(--component-padding);
   color: var(--text-color);
@@ -13,7 +13,7 @@ atom-panel.modal,
   background-color: var(--overlay-background-color);
   box-shadow: 0 0 10px var(--base-border-color);
 
-  atom-text-editor[mini] {
+  lumine-text-editor[mini] {
     margin-bottom: var(--component-padding);
   }
 
@@ -43,7 +43,7 @@ atom-panel.modal,
   }
 }
 
-atom-panel.modal {
+lumine-panel.modal {
   /* Keep the modal's own content above the backdrop below. */
   > * {
     position: relative;
@@ -57,11 +57,11 @@ atom-panel.modal {
     background: var(--overlay-backdrop-color);
     opacity: var(--overlay-backdrop-opacity);
     backface-visibility: hidden; /* fixes a scrollbar artefact on retina screens */
-    animation: atom-modal-backdrop-fade 0.18s ease-out;
+    animation: lumine-modal-backdrop-fade 0.18s ease-out;
   }
 }
 
-@keyframes atom-modal-backdrop-fade {
+@keyframes lumine-modal-backdrop-fade {
   from {
     opacity: 0;
   }

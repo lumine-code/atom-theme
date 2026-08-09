@@ -11,10 +11,10 @@ ul.background-message {
 
 /* Notifications ------------------------------------ */
 
-atom-notifications {
+lumine-notifications {
   font-size: calc(var(--ui-size) * 1.2);
 
-  atom-notification {
+  lumine-notification {
     .detail,
     .description {
       font-size: 0.85em;

@@ -5,7 +5,7 @@
 
 /* --- editor --- */
 
-atom-text-editor {
+lumine-text-editor {
   background-color: var(--syntax-background-color);
   color: var(--syntax-text-color);
 
@@ -44,7 +44,7 @@ atom-text-editor {
   .gutter .line-number.folded,
   .gutter .line-number::after,
   .fold-marker::after {
-    color: var(--atom-fold);
+    color: var(--classic-fold);
   }
 
   /* The cursor line and the selection only light up on the focused editor —
@@ -69,12 +69,12 @@ atom-text-editor {
 /* --- syntax-legacy/_base --- */
 
 .syntax--comment {
-  color: var(--atom-gray);
+  color: var(--classic-gray);
   font-style: italic;
 }
 
 .syntax--string {
-  color: var(--atom-crimson);
+  color: var(--classic-crimson);
 }
 
 /* String interpolation in Ruby, CoffeeScript, and others */
@@ -96,16 +96,16 @@ atom-text-editor {
 
 .syntax--constant {
   &.syntax--numeric {
-    color: var(--atom-crimson);
+    color: var(--classic-crimson);
   }
 
   &.syntax--language {
-    color: var(--atom-indigo);
+    color: var(--classic-indigo);
   }
 
   &.syntax--character,
   &.syntax--other {
-    color: var(--atom-indigo);
+    color: var(--classic-indigo);
   }
 
   &.syntax--symbol {
@@ -118,19 +118,19 @@ atom-text-editor {
 }
 
 .syntax--variable {
-  color: var(--atom-teal);
+  color: var(--classic-teal);
 
   &.syntax--parameter {
-    color: var(--atom-indigo);
+    color: var(--classic-indigo);
   }
 }
 
 .syntax--keyword {
-  color: var(--atom-ink);
+  color: var(--classic-ink);
   font-weight: bold;
 
   &.syntax--unit {
-    color: var(--atom-navy);
+    color: var(--classic-navy);
   }
 
   &.syntax--special-method {
@@ -139,34 +139,34 @@ atom-text-editor {
 }
 
 .syntax--storage {
-  color: var(--atom-ink);
+  color: var(--classic-ink);
 
   &.syntax--type {
-    color: var(--atom-ink);
+    color: var(--classic-ink);
   }
 }
 
 .syntax--entity {
   &.syntax--name.syntax--class {
-    color: var(--atom-indigo);
+    color: var(--classic-indigo);
     text-decoration: underline;
   }
 
   &.syntax--other.syntax--inherited-class {
-    color: var(--atom-indigo);
+    color: var(--classic-indigo);
     text-decoration: underline;
   }
 
   &.syntax--name.syntax--function {
-    color: var(--atom-maroon);
+    color: var(--classic-maroon);
   }
 
   &.syntax--name.syntax--tag {
-    color: var(--atom-teal);
+    color: var(--classic-teal);
   }
 
   &.syntax--other.syntax--attribute-name {
-    color: var(--atom-navy);
+    color: var(--classic-navy);
     font-weight: bold;
   }
 
@@ -179,11 +179,11 @@ atom-text-editor {
   &.syntax--constant,
   &.syntax--function,
   &.syntax--type {
-    color: var(--atom-navy);
+    color: var(--classic-navy);
   }
 
   &.syntax--class {
-    color: var(--atom-teal);
+    color: var(--classic-teal);
   }
 }
 
@@ -208,7 +208,7 @@ atom-text-editor {
 
   &.syntax--structure.syntax--dictionary.syntax--value.syntax--json
     > .syntax--string.syntax--quoted.syntax--double.syntax--json {
-    color: var(--atom-crimson);
+    color: var(--classic-crimson);
   }
 
   &.syntax--diff,
@@ -221,12 +221,12 @@ atom-text-editor {
 
 .syntax--css {
   &.syntax--support.syntax--property-name {
-    color: var(--atom-slate);
+    color: var(--classic-slate);
     font-weight: bold;
   }
 
   &.syntax--constant {
-    color: var(--atom-cyan);
+    color: var(--classic-cyan);
   }
 }
 
@@ -238,20 +238,20 @@ atom-text-editor {
 
 .syntax--gfm {
   .syntax--markup.syntax--heading {
-    color: var(--atom-ink-strong);
+    color: var(--classic-ink-strong);
   }
 
   .syntax--link {
-    color: var(--atom-gray-mid);
+    color: var(--classic-gray-mid);
   }
 
   .syntax--variable.syntax--list,
   .syntax--punctuation.syntax--definition.syntax--list-item {
-    color: var(--atom-gray-mid);
+    color: var(--classic-gray-mid);
   }
 
   .syntax--meta.syntax--link.syntax--text {
-    color: var(--atom-fg);
+    color: var(--classic-fg);
   }
 }
 
@@ -261,14 +261,14 @@ atom-text-editor {
   }
 
   .syntax--heading {
-    color: var(--atom-ink-strong);
+    color: var(--classic-ink-strong);
   }
 
   .syntax--link {
-    color: var(--atom-gray-mid);
+    color: var(--classic-gray-mid);
 
     .syntax--string {
-      color: var(--atom-gray-mid);
+      color: var(--classic-gray-mid);
     }
   }
 }
@@ -285,49 +285,49 @@ atom-text-editor {
 
 /* if for and del = && */
 .syntax--keyword {
-  color: var(--atom-ink);
+  color: var(--classic-ink);
   font-weight: bold;
 
   /* global let def class */
   &.syntax--storage {
-    color: var(--atom-ink);
+    color: var(--classic-ink);
     font-weight: bold;
   }
 
   /* int char float */
   &.syntax--type {
-    color: var(--atom-navy);
+    color: var(--classic-navy);
     font-weight: normal;
   }
 
   /* super */
   &.syntax--function {
-    color: var(--atom-teal);
+    color: var(--classic-teal);
   }
 
   /* this self */
   &.syntax--variable {
-    color: var(--atom-teal);
+    color: var(--classic-teal);
   }
 }
 
 /* identifier */
 .syntax--entity {
-  color: var(--atom-fg);
+  color: var(--classic-fg);
 
   /* function(parameter) */
   &.syntax--parameter {
-    color: var(--atom-fg);
+    color: var(--classic-fg);
   }
 
   /* self cls iota */
   &.syntax--support {
-    color: var(--atom-teal);
+    color: var(--classic-teal);
   }
 
   /* @entity.decorator */
   &.syntax--decorator:last-child {
-    color: var(--atom-maroon);
+    color: var(--classic-maroon);
   }
 
   /* label: */
@@ -337,32 +337,32 @@ atom-text-editor {
 
   /* function method */
   &.syntax--function {
-    color: var(--atom-maroon);
+    color: var(--classic-maroon);
   }
 
   /* add */
   &.syntax--operator {
-    color: var(--atom-maroon);
+    color: var(--classic-maroon);
 
     /* %>% <=> */
     &.syntax--symbolic {
-      color: var(--atom-fg);
+      color: var(--classic-fg);
     }
   }
 
   /* String Class int rune list */
   &.syntax--type {
-    color: var(--atom-navy);
+    color: var(--classic-navy);
   }
 
   /* div span */
   &.syntax--tag {
-    color: var(--atom-teal);
+    color: var(--classic-teal);
   }
 
   /* href src alt */
   &.syntax--attribute {
-    color: var(--atom-navy);
+    color: var(--classic-navy);
     font-weight: bold;
   }
 }
@@ -371,96 +371,96 @@ atom-text-editor {
 .syntax--punctuation {
   /* . -> */
   &.syntax--accessor.syntax--member {
-    color: var(--atom-ink);
+    color: var(--classic-ink);
     font-weight: bold;
   }
 }
 
 /* "string" */
 .syntax--string {
-  color: var(--atom-crimson);
+  color: var(--classic-crimson);
 
   /* :immutable */
   &.syntax--immutable {
-    color: var(--atom-crimson);
+    color: var(--classic-crimson);
   }
 
   /* {placeholder} %().2f */
   &.syntax--part {
-    color: var(--atom-indigo);
+    color: var(--classic-indigo);
   }
 
   /* ${ } */
   &.syntax--interpolation {
-    color: var(--atom-ink);
+    color: var(--classic-ink);
   }
 
   /* /^reg[ex]?p/ */
   &.syntax--regexp {
-    color: var(--atom-crimson);
+    color: var(--classic-crimson);
 
     /* ^ $ \b ? + i */
     &.syntax--language {
-      color: var(--atom-ink);
+      color: var(--classic-ink);
     }
 
     /* <variable> \1 */
     &.syntax--variable {
-      color: var(--atom-teal);
+      color: var(--classic-teal);
     }
 
     /* ( ) [^ ] (?= ) | r" / */
     &.syntax--punctuation {
-      color: var(--atom-ink);
+      color: var(--classic-ink);
     }
   }
 }
 
 /* literal 4 1.3 */
 .syntax--constant {
-  color: var(--atom-crimson);
+  color: var(--classic-crimson);
 
   /* &lt; 'a' */
   &.syntax--character {
-    color: var(--atom-crimson);
+    color: var(--classic-crimson);
 
     /* \" \' \g \. */
     &.syntax--escape {
-      color: var(--atom-crimson);
+      color: var(--classic-crimson);
     }
 
     /* ♡ \n \t \W . */
     &.syntax--code {
-      color: var(--atom-indigo);
+      color: var(--classic-indigo);
     }
   }
 
   /* true false nil */
   &.syntax--language {
-    color: var(--atom-crimson);
+    color: var(--classic-crimson);
   }
 }
 
 /* text */
 .syntax--text {
-  color: var(--atom-fg);
+  color: var(--classic-fg);
 }
 
 /* __formatted__ */
 .syntax--markup {
   /* # Heading */
   &.syntax--heading {
-    color: var(--atom-ink-strong);
+    color: var(--classic-ink-strong);
   }
 
   /* 1. * - */
   &.syntax--list.syntax--punctuation {
-    color: var(--atom-gray-mid);
+    color: var(--classic-gray-mid);
   }
 
   /* url.com (path) */
   &.syntax--link {
-    color: var(--atom-gray-mid);
+    color: var(--classic-gray-mid);
   }
 
   &.syntax--bold {
@@ -474,29 +474,29 @@ atom-text-editor {
   /* Horizontal rules in GFM used to be scoped as `comment.hr`. For continuity,
      we assign the color of a comment to this new scope. */
   &.syntax--horizontal-rule {
-    color: var(--atom-gray);
+    color: var(--classic-gray);
   }
 }
 
 /* comment */
 .syntax--comment {
-  color: var(--atom-gray);
+  color: var(--classic-gray);
   font-style: italic;
 
   /* @param TODO NOTE */
   &.syntax--caption {
-    color: hsl(from var(--atom-gray) h s calc(l + 6));
+    color: hsl(from var(--classic-gray) h s calc(l + 6));
     font-weight: bold;
   }
 
   /* variable function type */
   &.syntax--term {
-    color: hsl(from var(--atom-gray) h s calc(l + 9));
+    color: hsl(from var(--classic-gray) h s calc(l + 9));
   }
 
   /* { } / . */
   &.syntax--punctuation {
-    color: var(--atom-gray);
+    color: var(--classic-gray);
     font-weight: normal;
   }
 }
@@ -522,104 +522,104 @@ atom-text-editor {
   .syntax--entity {
     /* function() */
     &.syntax--function {
-      color: var(--atom-fg);
+      color: var(--classic-fg);
 
       /* url rgb */
       &.syntax--support {
-        color: var(--atom-navy);
+        color: var(--classic-navy);
       }
     }
 
     /* .class :pseudo-class attribute */
     &.syntax--selector {
-      color: var(--atom-navy);
+      color: var(--classic-navy);
       font-weight: bold;
 
       /* div span */
       &.syntax--tag {
-        color: var(--atom-teal);
+        color: var(--classic-teal);
         font-weight: normal;
       }
     }
 
     /* href src alt */
     .syntax--attribute {
-      color: var(--atom-navy);
+      color: var(--classic-navy);
       font-weight: bold;
     }
 
     /* property: constant */
     &.syntax--property {
-      color: var(--atom-fg);
+      color: var(--classic-fg);
 
       /* height position border */
       &.syntax--support {
-        color: var(--atom-slate);
+        color: var(--classic-slate);
         font-weight: bold;
       }
     }
 
     /* --variable */
     &.syntax--variable {
-      color: var(--atom-teal);
+      color: var(--classic-teal);
     }
 
     /* @keyframes keyframe */
     &.syntax--keyframe {
-      color: var(--atom-indigo);
+      color: var(--classic-indigo);
     }
   }
 
   /* property: constant */
   .syntax--constant {
-    color: var(--atom-fg);
+    color: var(--classic-fg);
 
     /* flex solid bold */
     &.syntax--support {
-      color: var(--atom-cyan);
+      color: var(--classic-cyan);
     }
 
     /* 4 1.3 */
     &.syntax--numeric {
-      color: var(--atom-cyan);
+      color: var(--classic-cyan);
 
       /* px % cm hz */
       &.syntax--unit {
-        color: var(--atom-navy);
+        color: var(--classic-navy);
         font-weight: bold;
       }
     }
 
     /* screen print */
     &.syntax--media {
-      color: var(--atom-cyan);
+      color: var(--classic-cyan);
     }
 
     /* #b294bb blue red */
     &.syntax--color {
-      color: var(--atom-cyan);
+      color: var(--classic-cyan);
     }
 
     /* [attribute=attribute-value] */
     &.syntax--attribute-value {
-      color: var(--atom-crimson);
+      color: var(--classic-crimson);
     }
   }
 
   /* . : :: # */
   .syntax--punctuation.syntax--selector {
-    color: var(--atom-navy);
+    color: var(--classic-navy);
     font-weight: bold;
 
     /* * */
     &.syntax--wildcard {
-      color: var(--atom-teal);
+      color: var(--classic-teal);
       font-weight: normal;
     }
 
     /* [] */
     &.syntax--attribute {
-      color: var(--atom-fg);
+      color: var(--classic-fg);
       font-weight: normal;
     }
   }
@@ -631,7 +631,7 @@ atom-text-editor {
   /* Color JSON keys differently from other strings. */
   .syntax--meta.syntax--structure.syntax--key {
     .syntax--string.syntax--quoted.syntax--double {
-      color: var(--atom-teal);
+      color: var(--classic-teal);
     }
   }
 }

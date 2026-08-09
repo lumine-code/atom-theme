@@ -5,7 +5,7 @@
   border-radius: var(--component-border-radius);
 }
 
-atom-panel,
+lumine-panel,
 .tool-panel {
   position: relative;
   font-weight: normal;

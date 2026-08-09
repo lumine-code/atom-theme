@@ -2,7 +2,7 @@
  *
  * The striped bar of the classic themes. The `-webkit-linear-gradient(-30deg)`
  * of the Less source is `linear-gradient(120deg)` in standard syntax.
- * Loading spinners come from core (static/atom-ui/styles/loading.css). */
+ * Loading spinners come from core (static/lumine-ui/styles/loading.css). */
 
 progress {
   height: 16px;
@@ -22,7 +22,7 @@ progress {
     25px 16px,
     100% 100%;
   /* Stop after 6 runs (30s) to limit CPU usage. */
-  animation: atom-progress-stripes 5s linear 6;
+  animation: lumine-progress-stripes 5s linear 6;
 }
 
 progress::-webkit-progress-bar {
@@ -41,7 +41,7 @@ progress[value] {
   animation: none;
 }
 
-@keyframes atom-progress-stripes {
+@keyframes lumine-progress-stripes {
   to {
     background-position: 100px 0;
   }

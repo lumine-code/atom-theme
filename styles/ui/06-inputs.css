@@ -1,6 +1,6 @@
 /* Form controls
  *
- * Core draws the shapes (static/atom-ui/styles/inputs.css); the theme only
+ * Core draws the shapes (static/lumine-ui/styles/inputs.css); the theme only
  * supplies the accent and the focus ring. */
 
 .input-checkbox {

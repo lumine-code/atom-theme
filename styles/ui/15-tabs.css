@@ -189,7 +189,7 @@
 
 /* Docks get a flat tab strip — the trapezoids need the floor below them, and a
    dock's tab bar has no pane body under it. */
-atom-dock .tab-bar {
+lumine-dock .tab-bar {
   height: calc(var(--tab-height) + var(--tab-top-padding));
   padding-left: 0;
   box-shadow: inset 0 -1px 0 var(--tab-border-color);
