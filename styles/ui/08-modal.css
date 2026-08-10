@@ -6,6 +6,16 @@
 
 lumine-panel.modal,
 .overlay {
+  /* Wider than core's 500px — a select list's rows are file paths and command
+     names, and 500px truncated most of them. `left`/`margin-left` are both
+     restated because core centres the card with a margin paired to that 500px
+     and drops to full width under a `max-width: 500px` query; capping at 92vw
+     covers the narrow case here, so neither of core's values may survive. */
+  --modal-width: min(92vw, 700px);
+  width: var(--modal-width);
+  left: 50%;
+  margin-left: calc(var(--modal-width) / -2);
+
   padding: var(--component-padding);
   color: var(--text-color);
   border: 1px solid var(--overlay-border-color);

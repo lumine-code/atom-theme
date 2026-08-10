@@ -19,8 +19,6 @@
   overflow-x: auto;
   overflow-y: hidden;
   background-color: var(--tab-bar-background-color);
-  background-image: var(--tab-bar-background-image);
-  box-shadow: inset 0 -8px 8px -4px rgba(0, 0, 0, 0.15);
 
   &::-webkit-scrollbar {
     display: none;
@@ -50,9 +48,13 @@
     border: none;
     transition: color 0.1s ease-in;
 
-    /* Flat, not the classic top-lit gradient: a tab's shape is already what
-       tells it from the bar, and the sloped edges are pseudo-elements of a
-       different height, so any vertical gradient banded across the join. */
+    /* Flat: one colour and a 1px outline, no gradient and no halo. The shape is
+       what tells a tab from the bar, and a vertical gradient banded across the
+       join anyway — the sloped edges are pseudo-elements of a different height.
+       The outline has to be an inset shadow rather than a border: the edges are
+       skewed, and a border skews with them into a thicker slanted stroke. */
+    box-shadow: inset 0 1px 0 var(--tab-border-color);
+
     &,
     &::before,
     &::after {
@@ -73,9 +75,7 @@
     &::before {
       left: calc(var(--tab-edge-width) / -2 - 1px);
       border-top-left-radius: var(--tab-radius);
-      box-shadow:
-        inset 1px 1px 0 var(--tab-border-color),
-        -4px 0 4px rgba(0, 0, 0, 0.1);
+      box-shadow: inset 1px 1px 0 var(--tab-border-color);
       transform: skewX(calc(-1 * var(--tab-skew)));
     }
 
@@ -83,9 +83,7 @@
     &::after {
       right: calc(var(--tab-edge-width) / -2 - 1px);
       border-top-right-radius: var(--tab-radius);
-      box-shadow:
-        inset -1px 1px 0 var(--tab-border-color),
-        4px 0 4px rgba(0, 0, 0, 0.1);
+      box-shadow: inset -1px 1px 0 var(--tab-border-color);
       transform: skewX(var(--tab-skew));
     }
 
@@ -135,27 +133,12 @@
   .tab.active {
     z-index: 1;
     color: var(--tab-text-color-active);
-    box-shadow:
-      inset -1px 1px 0 var(--tab-border-color),
-      4px -4px 4px rgba(0, 0, 0, 0.1);
 
     &,
     &::before,
     &::after {
       height: calc(var(--tab-height) + 1px);
       background-color: var(--tab-background-color-active);
-    }
-
-    &::before {
-      box-shadow:
-        inset 1px 1px 0 var(--tab-border-color),
-        -4px -4px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    &::after {
-      box-shadow:
-        inset -1px 1px 0 var(--tab-border-color),
-        4px -4px 4px rgba(0, 0, 0, 0.1);
     }
   }
 

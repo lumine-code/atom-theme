@@ -154,7 +154,6 @@
 
   /* --- theme-local (not part of the contract) --- */
   --scrollbar-thumb-shadow-color: #000;
-  --tab-bar-background-image: none;
   --tab-bar-bottom-border-color: #111;
   --tree-view-background-color-focus: #282828;
   --progress-track-color: #666;
