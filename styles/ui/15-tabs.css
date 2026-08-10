@@ -36,6 +36,12 @@
   .tab {
     position: relative;
     top: var(--tab-top-padding);
+    /* ~ icon + 6 characters, the same title one-theme's 7em leaves room for.
+       The extra two are what the ✕ costs: it is always on show here, so the
+       tabs package's room for it stays reserved, where a theme that reveals it
+       on hover lets the title run underneath. Without a floor the only one is
+       that package's 40px, which leaves 6px of title and no file name at all. */
+    min-width: 9em;
     max-width: 160px;
     height: var(--tab-height);
     margin: 0 20px 0 5px;
