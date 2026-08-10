@@ -1,19 +1,30 @@
 /* Title bar
  *
- * A control tile takes the same treatment as a status-bar tile: the package
- * supplies the box — flex centring, full strip height, no button chrome — and
- * the theme supplies the look. A tile is what the bar stamped
- * `.title-bar-item` on, never `.inline-block`. */
+ * A control tile is what the title bar stamped `.title-bar-item` on, and an
+ * application-menu label is the other thing you can point at in the same strip.
+ * The package supplies both boxes — flex centring, strip height, the layer a
+ * label's highlight paints on — and the theme supplies the look, the same
+ * division the status bar uses.
+ *
+ * A label paints through `::before` because its own box holds the submenu. That
+ * is the only difference; the two take the same colour in the same state. */
 
-.title-bar .control-tiles .title-bar-item {
-  color: var(--text-color-subtle);
+.title-bar {
+  .control-tiles .title-bar-item {
+    color: var(--text-color-subtle);
+  }
 
-  &:hover {
+  .control-tiles .title-bar-item:hover {
     color: var(--text-color-highlight);
+  }
+
+  .control-tiles .title-bar-item:hover,
+  .app-menu .menu-label:is(:hover, .open, .focused)::before {
     background-color: var(--level-3-color-hover);
   }
 
-  &:active {
+  .control-tiles .title-bar-item:active,
+  .app-menu .menu-label:active::before {
     background-color: var(--level-3-color-active);
   }
 }
