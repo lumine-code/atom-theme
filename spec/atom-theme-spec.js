@@ -31,9 +31,15 @@ describe("atom-theme", () => {
     expect(uiNames).toContain("15-tabs.css");
     expect(uiNames.indexOf("15-tabs.css")).toBeLessThan(uiNames.indexOf("variables.css"));
 
+    // The rules split across numbered files and load in name order; the palette
+    // is last, and no file spells the editor scope in its name — a syntax
+    // theme's stylesheets get that context from the theme's own type.
     const syntaxNames = syntaxPaths.map((stylePath) => path.basename(stylePath));
-    expect(syntaxNames).toContain("syntax.lumine-text-editor.css");
+    expect(syntaxNames).toContain("01-editor.css");
+    expect(syntaxNames).toContain("03-base.css");
     expect(syntaxNames).toContain("variables.css");
+    expect(syntaxNames.filter((name) => name.includes(".lumine-text-editor."))).toEqual([]);
+    expect(syntaxNames).toEqual([...syntaxNames].sort());
   });
 
   it("applies its stylesheets once the themes activate", async () => {

@@ -1,0 +1,246 @@
+/*
+ * Base scope-to-colour mapping for the current scope vocabulary.
+ *
+ * atom-day syntax rules; the palette lives in variables.css.
+ */
+
+/*
+   This defines styling rules for syntax classes.
+
+   When styling rules conflict:
+   - The last rule overrides previous rules.
+   - The rule with most classes and pseudo-classes overrides the last rule.
+*/
+
+/* if for and del = && */
+.syntax--keyword {
+  color: var(--classic-ink);
+  font-weight: bold;
+
+  /* global let def class */
+  &.syntax--storage {
+    color: var(--classic-ink);
+    font-weight: bold;
+  }
+
+  /* int char float */
+  &.syntax--type {
+    color: var(--classic-navy);
+    font-weight: normal;
+  }
+
+  /* super */
+  &.syntax--function {
+    color: var(--classic-teal);
+  }
+
+  /* this self */
+  &.syntax--variable {
+    color: var(--classic-teal);
+  }
+}
+
+/* identifier */
+.syntax--entity {
+  color: var(--classic-fg);
+
+  /* function(parameter) */
+  &.syntax--parameter {
+    color: var(--classic-fg);
+  }
+
+  /* self cls iota */
+  &.syntax--support {
+    color: var(--classic-teal);
+  }
+
+  /* @entity.decorator */
+  &.syntax--decorator:last-child {
+    color: var(--classic-maroon);
+  }
+
+  /* label: */
+  &.syntax--label {
+    text-decoration: underline;
+  }
+
+  /* function method */
+  &.syntax--function {
+    color: var(--classic-maroon);
+  }
+
+  /* add */
+  &.syntax--operator {
+    color: var(--classic-maroon);
+
+    /* %>% <=> */
+    &.syntax--symbolic {
+      color: var(--classic-fg);
+    }
+  }
+
+  /* String Class int rune list */
+  &.syntax--type {
+    color: var(--classic-navy);
+  }
+
+  /* div span */
+  &.syntax--tag {
+    color: var(--classic-teal);
+  }
+
+  /* href src alt */
+  &.syntax--attribute {
+    color: var(--classic-navy);
+    font-weight: bold;
+  }
+}
+
+/* () [] {} => @ */
+.syntax--punctuation {
+  /* . -> */
+  &.syntax--accessor.syntax--member {
+    color: var(--classic-ink);
+    font-weight: bold;
+  }
+}
+
+/* "string" */
+.syntax--string {
+  color: var(--classic-crimson);
+
+  /* :immutable */
+  &.syntax--immutable {
+    color: var(--classic-crimson);
+  }
+
+  /* {placeholder} %().2f */
+  &.syntax--part {
+    color: var(--classic-indigo);
+  }
+
+  /* ${ } */
+  &.syntax--interpolation {
+    color: var(--classic-ink);
+  }
+
+  /* /^reg[ex]?p/ */
+  &.syntax--regexp {
+    color: var(--classic-crimson);
+
+    /* ^ $ \b ? + i */
+    &.syntax--language {
+      color: var(--classic-ink);
+    }
+
+    /* <variable> \1 */
+    &.syntax--variable {
+      color: var(--classic-teal);
+    }
+
+    /* ( ) [^ ] (?= ) | r" / */
+    &.syntax--punctuation {
+      color: var(--classic-ink);
+    }
+  }
+}
+
+/* literal 4 1.3 */
+.syntax--constant {
+  color: var(--classic-crimson);
+
+  /* &lt; 'a' */
+  &.syntax--character {
+    color: var(--classic-crimson);
+
+    /* \" \' \g \. */
+    &.syntax--escape {
+      color: var(--classic-crimson);
+    }
+
+    /* ♡ \n \t \W . */
+    &.syntax--code {
+      color: var(--classic-indigo);
+    }
+  }
+
+  /* true false nil */
+  &.syntax--language {
+    color: var(--classic-crimson);
+  }
+}
+
+/* text */
+.syntax--text {
+  color: var(--classic-fg);
+}
+
+/* __formatted__ */
+.syntax--markup {
+  /* # Heading */
+  &.syntax--heading {
+    color: var(--classic-ink-strong);
+  }
+
+  /* 1. * - */
+  &.syntax--list.syntax--punctuation {
+    color: var(--classic-gray-mid);
+  }
+
+  /* url.com (path) */
+  &.syntax--link {
+    color: var(--classic-gray-mid);
+  }
+
+  &.syntax--bold {
+    font-weight: bold;
+  }
+
+  &.syntax--italic {
+    font-style: italic;
+  }
+
+  /* Horizontal rules in GFM used to be scoped as `comment.hr`. For continuity,
+     we assign the color of a comment to this new scope. */
+  &.syntax--horizontal-rule {
+    color: var(--classic-gray);
+  }
+}
+
+/* comment */
+.syntax--comment {
+  color: var(--classic-gray);
+  font-style: italic;
+
+  /* @param TODO NOTE */
+  &.syntax--caption {
+    color: hsl(from var(--classic-gray) h s calc(l + 6));
+    font-weight: bold;
+  }
+
+  /* variable function type */
+  &.syntax--term {
+    color: hsl(from var(--classic-gray) h s calc(l + 9));
+  }
+
+  /* { } / . */
+  &.syntax--punctuation {
+    color: var(--classic-gray);
+    font-weight: normal;
+  }
+}
+
+/* 0invalid */
+.syntax--invalid:not(.syntax--punctuation) {
+  /* §illegal */
+  &.syntax--illegal {
+    color: #f8f8f0 !important;
+    background-color: #00a8c6 !important;
+  }
+
+  /* obsolete() */
+  &.syntax--deprecated {
+    color: #f8f8f0 !important;
+    background-color: #8fbe00 !important;
+  }
+}

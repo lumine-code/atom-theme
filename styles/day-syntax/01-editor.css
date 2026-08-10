@@ -1,0 +1,66 @@
+/*
+ * Editor chrome — background, gutter, cursor line, invisibles and folds.
+ *
+ * atom-day syntax rules; the palette lives in variables.css.
+ */
+
+lumine-text-editor {
+  background-color: var(--syntax-background-color);
+  color: var(--syntax-text-color);
+
+  .invisible {
+    color: var(--syntax-text-color);
+  }
+
+  .invisible-character {
+    color: var(--syntax-invisible-character-color);
+  }
+
+  .selection .region {
+    background-color: #e1e1e1;
+  }
+
+  /* Ligatures joining across the caret are distracting while typing. */
+  .line.cursor-line,
+  &[mini] {
+    font-variant-ligatures: none;
+  }
+
+  .gutter {
+    color: var(--syntax-gutter-text-color);
+    background-color: var(--syntax-gutter-background-color);
+
+    .line-number {
+      color: var(--syntax-gutter-text-color);
+      -webkit-font-smoothing: antialiased;
+
+      .icon-right {
+        color: var(--syntax-text-color);
+      }
+    }
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number::after,
+  .fold-marker::after {
+    color: var(--classic-fold);
+  }
+
+  /* The cursor line and the selection only light up on the focused editor —
+     the classic light theme's most recognizable trait. */
+  &.is-focused {
+    .cursor {
+      border-left: 2px solid var(--syntax-cursor-color);
+      transition: opacity 0.5s;
+    }
+
+    .selection .region {
+      background-color: var(--syntax-selection-color);
+    }
+
+    .line-number.cursor-line-no-selection,
+    .line.cursor-line {
+      background-color: var(--syntax-gutter-background-color-selected);
+    }
+  }
+}

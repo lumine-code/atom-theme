@@ -1,0 +1,210 @@
+/*
+ * Scope-to-colour mapping for the TextMate scope vocabulary.
+ *
+ * atom-day syntax rules; the palette lives in variables.css.
+ */
+
+.syntax--comment {
+  color: var(--classic-gray);
+  font-style: italic;
+}
+
+.syntax--string {
+  color: var(--classic-crimson);
+}
+
+/* String interpolation in Ruby, CoffeeScript, and others */
+.syntax--string {
+  .syntax--source,
+  .syntax--meta.syntax--embedded.syntax--line {
+    color: #5a5a5a;
+  }
+
+  .syntax--punctuation.syntax--section.syntax--embedded {
+    color: #920b2d;
+
+    /* Required for the end of embedded strings in Ruby */
+    .syntax--source {
+      color: #920b2d;
+    }
+  }
+}
+
+.syntax--constant {
+  &.syntax--numeric {
+    color: var(--classic-crimson);
+  }
+
+  &.syntax--language {
+    color: var(--classic-indigo);
+  }
+
+  &.syntax--character,
+  &.syntax--other {
+    color: var(--classic-indigo);
+  }
+
+  &.syntax--symbol {
+    color: #990073;
+  }
+
+  &.syntax--numeric.syntax--line-number.syntax--find-in-files .syntax--match {
+    color: rgba(143, 190, 0, 0.63);
+  }
+}
+
+.syntax--variable {
+  color: var(--classic-teal);
+
+  &.syntax--parameter {
+    color: var(--classic-indigo);
+  }
+}
+
+.syntax--keyword {
+  color: var(--classic-ink);
+  font-weight: bold;
+
+  &.syntax--unit {
+    color: var(--classic-navy);
+  }
+
+  &.syntax--special-method {
+    color: #0086b3;
+  }
+}
+
+.syntax--storage {
+  color: var(--classic-ink);
+
+  &.syntax--type {
+    color: var(--classic-ink);
+  }
+}
+
+.syntax--entity {
+  &.syntax--name.syntax--class {
+    color: var(--classic-indigo);
+    text-decoration: underline;
+  }
+
+  &.syntax--other.syntax--inherited-class {
+    color: var(--classic-indigo);
+    text-decoration: underline;
+  }
+
+  &.syntax--name.syntax--function {
+    color: var(--classic-maroon);
+  }
+
+  &.syntax--name.syntax--tag {
+    color: var(--classic-teal);
+  }
+
+  &.syntax--other.syntax--attribute-name {
+    color: var(--classic-navy);
+    font-weight: bold;
+  }
+
+  &.syntax--name.syntax--filename.syntax--find-in-files {
+    color: #e6db74;
+  }
+}
+
+.syntax--support {
+  &.syntax--constant,
+  &.syntax--function,
+  &.syntax--type {
+    color: var(--classic-navy);
+  }
+
+  &.syntax--class {
+    color: var(--classic-teal);
+  }
+}
+
+.syntax--invalid {
+  color: #f8f8f0;
+  background-color: #00a8c6;
+
+  &.syntax--deprecated {
+    color: #f8f8f0;
+    background-color: #8fbe00;
+  }
+}
+
+.syntax--meta {
+  &.syntax--structure.syntax--dictionary.syntax--json
+    > .syntax--string.syntax--quoted.syntax--double.syntax--json,
+  &.syntax--structure.syntax--dictionary.syntax--json
+    > .syntax--string.syntax--quoted.syntax--double.syntax--json
+    .syntax--punctuation.syntax--string {
+    color: #000080;
+  }
+
+  &.syntax--structure.syntax--dictionary.syntax--value.syntax--json
+    > .syntax--string.syntax--quoted.syntax--double.syntax--json {
+    color: var(--classic-crimson);
+  }
+
+  &.syntax--diff,
+  &.syntax--diff.syntax--header {
+    color: #75715e;
+  }
+}
+
+/* CSS */
+
+.syntax--css {
+  &.syntax--support.syntax--property-name {
+    color: var(--classic-slate);
+    font-weight: bold;
+  }
+
+  &.syntax--constant {
+    color: var(--classic-cyan);
+  }
+}
+
+/* Markdown */
+
+.syntax--source.syntax--gfm {
+  color: #444;
+}
+
+.syntax--gfm {
+  .syntax--markup.syntax--heading {
+    color: var(--classic-ink-strong);
+  }
+
+  .syntax--link {
+    color: var(--classic-gray-mid);
+  }
+
+  .syntax--variable.syntax--list,
+  .syntax--punctuation.syntax--definition.syntax--list-item {
+    color: var(--classic-gray-mid);
+  }
+
+  .syntax--meta.syntax--link.syntax--text {
+    color: var(--classic-fg);
+  }
+}
+
+.syntax--markdown {
+  .syntax--paragraph {
+    color: #444;
+  }
+
+  .syntax--heading {
+    color: var(--classic-ink-strong);
+  }
+
+  .syntax--link {
+    color: var(--classic-gray-mid);
+
+    .syntax--string {
+      color: var(--classic-gray-mid);
+    }
+  }
+}

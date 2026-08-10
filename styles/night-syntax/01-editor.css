@@ -1,0 +1,58 @@
+/*
+ * Editor chrome — background, gutter, cursor line, invisibles and folds.
+ *
+ * atom-night syntax rules; the palette lives in variables.css.
+ */
+
+lumine-text-editor {
+  background-color: var(--syntax-background-color);
+  color: var(--syntax-text-color);
+
+  .invisible {
+    color: var(--syntax-text-color);
+  }
+
+  .invisible-character {
+    color: var(--syntax-invisible-character-color);
+  }
+
+  .cursor {
+    border-left: 2px solid var(--syntax-cursor-color);
+    transition: opacity 0.5s;
+  }
+
+  .selection .region {
+    background-color: var(--syntax-selection-color);
+  }
+
+  /* Ligatures joining across the caret are distracting while typing. */
+  .line.cursor-line,
+  &[mini] {
+    font-variant-ligatures: none;
+  }
+
+  .gutter {
+    background-color: var(--syntax-gutter-background-color);
+
+    .line-number {
+      color: var(--syntax-gutter-text-color);
+      -webkit-font-smoothing: antialiased;
+
+      &.cursor-line,
+      &.cursor-line-no-selection {
+        color: var(--syntax-gutter-text-color-selected);
+        background-color: var(--syntax-gutter-background-color-selected);
+      }
+
+      .icon-right {
+        color: var(--syntax-text-color);
+      }
+    }
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number::after,
+  .fold-marker::after {
+    color: var(--classic-fold);
+  }
+}

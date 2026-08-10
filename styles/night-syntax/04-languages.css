@@ -1,0 +1,146 @@
+/*
+ * Per-language corrections to the current scope vocabulary.
+ *
+ * atom-night syntax rules; the palette lives in variables.css.
+ */
+
+/* --- syntax/css --- */
+
+/* --- syntax/css --- */
+
+.syntax--source.syntax--css {
+  .syntax--entity {
+    /* function() */
+    &.syntax--function {
+      color: var(--classic-fg);
+
+      /* url rgb */
+      &.syntax--support {
+        color: var(--classic-khaki);
+      }
+    }
+
+    /* .class :pseudo-class attribute */
+    &.syntax--selector {
+      color: var(--classic-magenta);
+
+      /* div span */
+      &.syntax--tag {
+        color: var(--classic-blue);
+        text-decoration: underline;
+      }
+
+      /* #id */
+      &.syntax--id {
+        color: #8b98ab;
+      }
+
+      /* .class */
+      &.syntax--class {
+        color: var(--classic-blue-deep);
+      }
+    }
+
+    /* property: constant */
+    &.syntax--property {
+      /* height position border */
+      &.syntax--support {
+        color: var(--classic-fg-bright);
+      }
+    }
+
+    /* --variable */
+    &.syntax--variable {
+      color: var(--classic-violet);
+    }
+
+    /* @keyframes keyframe */
+    &.syntax--keyframe {
+      color: var(--classic-violet);
+    }
+  }
+
+  /* property: constant */
+  .syntax--constant {
+    color: var(--classic-fg);
+
+    /* flex solid bold */
+    &.syntax--support {
+      color: var(--classic-yellow-soft);
+    }
+
+    /* 4 1.3 */
+    &.syntax--numeric {
+      color: var(--classic-green-soft);
+
+      /* px % cm hz */
+      &.syntax--unit {
+        color: var(--classic-green-soft);
+      }
+    }
+
+    /* screen print */
+    &.syntax--media {
+      color: var(--classic-orange);
+    }
+
+    /* #b294bb blue red */
+    &.syntax--color {
+      color: var(--classic-green-soft);
+    }
+
+    /* from to 50% */
+    &.syntax--offset {
+      color: var(--classic-orange);
+
+      /* % */
+      &.syntax--unit {
+        color: var(--classic-orange);
+      }
+    }
+  }
+
+  /* . : :: # [] () */
+  .syntax--punctuation {
+    color: var(--classic-fg);
+
+    /* * */
+    &.syntax--wildcard {
+      color: var(--classic-blue);
+      text-decoration: underline;
+    }
+  }
+}
+
+/* --- syntax/html --- */
+
+/* --- syntax/html --- */
+
+.syntax--source.syntax--html {
+  .syntax--punctuation {
+    /* < /> */
+    &.syntax--tag {
+      color: var(--classic-blue);
+    }
+  }
+
+  .syntax--meta {
+    /* <!doctype html> */
+    &.syntax--doctype {
+      color: var(--classic-gray);
+    }
+  }
+}
+
+/* --- syntax/json --- */
+
+/* --- syntax/json --- */
+
+.syntax--source.syntax--json {
+  /* Color JSON keys differently from other strings. */
+  .syntax--meta.syntax--structure.syntax--key {
+    .syntax--string.syntax--quoted.syntax--double {
+      color: var(--classic-blue);
+    }
+  }
+}

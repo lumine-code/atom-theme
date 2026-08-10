@@ -1,0 +1,129 @@
+/*
+ * Per-language corrections to the current scope vocabulary.
+ *
+ * atom-day syntax rules; the palette lives in variables.css.
+ */
+
+/* --- syntax/css --- */
+
+/* --- syntax/css --- */
+
+.syntax--source.syntax--css {
+  .syntax--entity {
+    /* function() */
+    &.syntax--function {
+      color: var(--classic-fg);
+
+      /* url rgb */
+      &.syntax--support {
+        color: var(--classic-navy);
+      }
+    }
+
+    /* .class :pseudo-class attribute */
+    &.syntax--selector {
+      color: var(--classic-navy);
+      font-weight: bold;
+
+      /* div span */
+      &.syntax--tag {
+        color: var(--classic-teal);
+        font-weight: normal;
+      }
+    }
+
+    /* href src alt */
+    .syntax--attribute {
+      color: var(--classic-navy);
+      font-weight: bold;
+    }
+
+    /* property: constant */
+    &.syntax--property {
+      color: var(--classic-fg);
+
+      /* height position border */
+      &.syntax--support {
+        color: var(--classic-slate);
+        font-weight: bold;
+      }
+    }
+
+    /* --variable */
+    &.syntax--variable {
+      color: var(--classic-teal);
+    }
+
+    /* @keyframes keyframe */
+    &.syntax--keyframe {
+      color: var(--classic-indigo);
+    }
+  }
+
+  /* property: constant */
+  .syntax--constant {
+    color: var(--classic-fg);
+
+    /* flex solid bold */
+    &.syntax--support {
+      color: var(--classic-cyan);
+    }
+
+    /* 4 1.3 */
+    &.syntax--numeric {
+      color: var(--classic-cyan);
+
+      /* px % cm hz */
+      &.syntax--unit {
+        color: var(--classic-navy);
+        font-weight: bold;
+      }
+    }
+
+    /* screen print */
+    &.syntax--media {
+      color: var(--classic-cyan);
+    }
+
+    /* #b294bb blue red */
+    &.syntax--color {
+      color: var(--classic-cyan);
+    }
+
+    /* [attribute=attribute-value] */
+    &.syntax--attribute-value {
+      color: var(--classic-crimson);
+    }
+  }
+
+  /* . : :: # */
+  .syntax--punctuation.syntax--selector {
+    color: var(--classic-navy);
+    font-weight: bold;
+
+    /* * */
+    &.syntax--wildcard {
+      color: var(--classic-teal);
+      font-weight: normal;
+    }
+
+    /* [] */
+    &.syntax--attribute {
+      color: var(--classic-fg);
+      font-weight: normal;
+    }
+  }
+}
+
+/* --- syntax/json --- */
+
+/* --- syntax/json --- */
+
+.syntax--source.syntax--json {
+  /* Color JSON keys differently from other strings. */
+  .syntax--meta.syntax--structure.syntax--key {
+    .syntax--string.syntax--quoted.syntax--double {
+      color: var(--classic-teal);
+    }
+  }
+}
