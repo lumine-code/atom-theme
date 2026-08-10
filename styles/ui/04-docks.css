@@ -45,3 +45,33 @@
 .lumine-dock-inner:not(.lumine-dock-open) .lumine-dock-toggle-button.bottom {
   margin-bottom: -1px;
 }
+
+/* A toggle button is a tab peeking out of the dock's edge, not the round pill
+   core draws — nothing else in the classic themes is a circle.
+ *
+ * Core sizes the inner element at twice the button and lets the button's
+ * `overflow: hidden` clip the half that faces the dock, which is also what
+ * hides it: the outro slides that half back under the mask. So only the two
+ * corners on the protruding side may take a radius, and the border on the
+ * clipped side is never seen. The class on the inner element is the dock's
+ * location, so `.left` is the button that protrudes to the *right*. */
+.lumine-dock-toggle-button .lumine-dock-toggle-button-inner {
+  color: var(--tab-text-color);
+  background-color: var(--tab-background-color);
+  border-color: var(--tab-border-color);
+
+  &.left {
+    border-radius: 0 var(--tab-radius) var(--tab-radius) 0;
+  }
+  &.right {
+    border-radius: var(--tab-radius) 0 0 var(--tab-radius);
+  }
+  &.bottom {
+    border-radius: var(--tab-radius) var(--tab-radius) 0 0;
+  }
+
+  &:hover {
+    color: var(--tab-text-color-active);
+    background-color: var(--tab-background-color-active);
+  }
+}

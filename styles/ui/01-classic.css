@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* The corner a piece of chrome takes where it protrudes from its strip —
+     a tab's top corners, a dock toggle's outer edge. Shared so the two agree. */
+  --tab-radius: 3px;
+}
+
 html {
   font-size: var(--font-size);
 }

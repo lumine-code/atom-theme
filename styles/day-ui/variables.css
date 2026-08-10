@@ -149,8 +149,6 @@
   /* --- theme-local (not part of the contract) --- */
   --scrollbar-thumb-shadow-color: #fff;
   --tab-bar-background-image: linear-gradient(#d8d8d8, #efefef);
-  --tab-background-image: linear-gradient(#e8e8e8, #d9d9d9);
-  --tab-background-image-active: linear-gradient(#f0f0f0, #f0f0f0);
   --tab-bar-bottom-border-color: #b9b9b9;
   --tree-view-background-color-focus: #e4e8ee;
   --progress-track-color: #ccc;

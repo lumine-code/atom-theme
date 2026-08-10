@@ -8,7 +8,6 @@
  * (.tab-status), so neither is restyled here beyond placement. */
 
 .tab-bar {
-  --tab-radius: 3px;
   --tab-skew: 30deg;
   --tab-top-padding: 5px;
   --tab-floor-height: 5px;
@@ -51,11 +50,14 @@
     border: none;
     transition: color 0.1s ease-in;
 
+    /* Flat, not the classic top-lit gradient: a tab's shape is already what
+       tells it from the bar, and the sloped edges are pseudo-elements of a
+       different height, so any vertical gradient banded across the join. */
     &,
     &::before,
     &::after {
       height: var(--tab-height);
-      background-image: var(--tab-background-image);
+      background-color: var(--tab-background-color);
     }
 
     &::before,
@@ -92,13 +94,34 @@
       z-index: 1;
     }
 
+    /* The package places the ✕ and owns the glyph; the theme gives it a square
+       hit target and the chip it paints on hover. Centring is flex rather than a
+       line height so it holds on the active tab, which is a pixel taller, and
+       the box is centred 15px from the tab's right edge — where the package puts
+       the status marker that replaces the ✕, so the two swap without shifting.
+       Subtler than the title: it is a control, not part of the name. */
     .close-icon {
       z-index: 3;
-      line-height: var(--tab-height);
-      color: var(--tab-text-color);
+      top: 50%;
+      right: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      margin-top: -8px;
+      color: var(--text-color-subtle);
+      border-radius: var(--component-border-radius);
+
+      &::before {
+        font-size: 10px;
+        width: auto;
+        height: auto;
+      }
 
       &:hover {
         color: var(--text-color-highlight);
+        background-color: var(--background-color-highlight);
       }
     }
 
@@ -120,7 +143,7 @@
     &::before,
     &::after {
       height: calc(var(--tab-height) + 1px);
-      background-image: var(--tab-background-image-active);
+      background-color: var(--tab-background-color-active);
     }
 
     &::before {
@@ -134,10 +157,6 @@
         inset -1px 1px 0 var(--tab-border-color),
         4px -4px 4px rgba(0, 0, 0, 0.1);
     }
-
-    .close-icon {
-      line-height: calc(var(--tab-height) - 1px);
-    }
   }
 
   /* Editor tabs match the syntax theme's background. */
@@ -147,7 +166,6 @@
     &,
     &::before,
     &::after {
-      background-image: none;
       background-color: var(--tab-background-color-editor);
     }
   }
@@ -179,7 +197,11 @@
 }
 
 /* The strip the active tab rests on. Drawn on the pane's item container rather
-   than the bar so the active tab (z-index 1) can sit on top of it. */
+   than the bar so the active tab (z-index 1) can sit on top of it.
+
+   A dock's pane is the same element tree as the centre's — the tabs package
+   inserts the bar as the pane's first child, `.item-views` follows it — so this
+   floor is drawn there too and dock tabs need no variant of their own. */
 .tab-bar + .item-views::before {
   content: "";
   position: absolute;
@@ -191,32 +213,4 @@
   border-top: 1px solid var(--tab-border-color);
   border-bottom: 1px solid var(--tab-bar-bottom-border-color);
   pointer-events: none;
-}
-
-/* Docks get a flat tab strip — the trapezoids need the floor below them, and a
-   dock's tab bar has no pane body under it. */
-lumine-dock .tab-bar {
-  height: calc(var(--tab-height) + var(--tab-top-padding));
-  padding-left: 0;
-  box-shadow: inset 0 -1px 0 var(--tab-border-color);
-
-  .tab {
-    margin: 0;
-
-    &::before,
-    &::after {
-      display: none;
-    }
-  }
-
-  .tab.active {
-    box-shadow: none;
-
-    &,
-    &::before,
-    &::after {
-      background-image: none;
-      background-color: var(--tool-panel-background-color);
-    }
-  }
 }
