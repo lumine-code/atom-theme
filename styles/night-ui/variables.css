@@ -3,10 +3,10 @@
  * custom properties. Converted from the classic atom-dark-ui Less sources;
  * every value that was a Less color function there is resolved here.
  *
- * Values must stay concrete (hex/hsl/rgba or plain var() aliases within this
- * file): Lumine derives the legacy Less ui-variables/syntax-variables shim for
- * community packages from this file, and Less color functions need concrete
- * colors to operate on. See src/theme-variable-shim.js.
+ * Values must stay concrete colors (hex/hsl/rgba, or a plain var() alias to
+ * another entry in this file): core and package stylesheets feed them to
+ * relative-color functions such as hsl(from var(--base-background-color) h s
+ * calc(l + 6)) and to color-mix(), which need a value that parses as a color.
  */
 
 :root {
