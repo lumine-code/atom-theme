@@ -10,6 +10,13 @@
  * is the only difference; the two take the same colour in the same state. */
 
 .title-bar {
+  /* Closes the strip off against the workspace, the counterpart to the hairline
+     the status bar draws along its top. A real border rather than an inset
+     shadow: every interactive item in this strip is `height: calc(100% + 4px)`
+     to reach the screen edge, and against a border-box parent that stops at the
+     border instead of painting over it. */
+  border-bottom: 1px solid var(--base-border-color);
+
   .control-tiles .title-bar-item {
     color: var(--text-color-subtle);
   }
