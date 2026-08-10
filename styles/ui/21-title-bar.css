@@ -1,0 +1,19 @@
+/* Title bar
+ *
+ * A control tile takes the same treatment as a status-bar tile: the package
+ * supplies the box — flex centring, full strip height, no button chrome — and
+ * the theme supplies the look. A tile is what the bar stamped
+ * `.title-bar-item` on, never `.inline-block`. */
+
+.title-bar .control-tiles .title-bar-item {
+  color: var(--text-color-subtle);
+
+  &:hover {
+    color: var(--text-color-highlight);
+    background-color: var(--level-3-color-hover);
+  }
+
+  &:active {
+    background-color: var(--level-3-color-active);
+  }
+}

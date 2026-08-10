@@ -23,10 +23,19 @@
     cursor: default;
   }
 
-  .inline-block {
-    margin: 0; /* override default */
+  /* Tiles butt against each other here: a tile's hover rectangle is its own
+     padding, so a gap between them would read as a break in the strip. */
+  .status-bar-left,
+  .status-bar-right {
+    gap: 0;
+  }
+
+  /* A tile is what the bar stamped `.status-bar-item` on. Never key this on
+     `.inline-block`: that is a layout utility packages also use for a row of
+     labels *inside* a tile, so a nested one would take the tile's padding and
+     paint its own hover rectangle inset within the tile's. */
+  .status-bar-item {
     padding: 0 calc(var(--ui-padding) / 2);
-    vertical-align: top;
 
     &:hover {
       text-decoration: none;
@@ -36,16 +45,6 @@
     &:active {
       background-color: var(--level-3-color-active);
     }
-
-    /* Reset on a nested inline-block. */
-    .inline-block {
-      margin: 0;
-      padding: 0;
-    }
-  }
-
-  .status-bar-right .inline-block {
-    margin-left: 0; /* override default */
   }
 
   .icon::before {
