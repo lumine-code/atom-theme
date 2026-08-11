@@ -11,20 +11,19 @@
 
 :root {
   /* --- text --- */
-  --text-color: #aaa;
-  /* Classic value was #555, which lands at 1.9:1 on the panel shades — every
-     other foreground in this palette clears 4:1, so it is raised just enough
-     to stay legible while still reading as subdued. */
-  --text-color-subtle: #777;
+  --text-color: #b5b5b5;
+  /* Classic #555 is unreadable on the panel shades. This neutral clears 4.5:1
+     on the base and overlay surfaces while remaining secondary. */
+  --text-color-subtle: #929292;
   --text-color-highlight: #fff;
   --text-color-selected: #fff;
-  --text-color-info: #5293d8;
+  --text-color-info: #5d9ddd;
   --text-color-success: #2bda77;
   --text-color-warning: #ff982d;
   /* Likewise #c00, the classic value, sat at 2.4:1 — unreadable for the one
-     colour that flags a problem. Lifted into the same red family at 4:1.
+     colour that flags a problem. Lifted into the same red family at 4.5:1.
      --background-color-error keeps #c00: white on it was always fine. */
-  --text-color-error: #e35d5d;
+  --text-color-error: #e96a6a;
 
   /* --- background --- */
   --background-color-info: #0098ff;
@@ -32,7 +31,7 @@
   --background-color-warning: #ffaa2c;
   --background-color-error: #c00;
   --background-color-highlight: rgba(255, 255, 255, 0.07);
-  --background-color-selected: #4182c4;
+  --background-color-selected: #3979ba;
   --app-background-color: #333;
 
   /* --- base --- */
@@ -89,18 +88,18 @@
   --use-custom-controls: true;
 
   /* --- extended: text --- */
-  --text-color-faded: rgba(170, 170, 170, 0.2);
-  --text-color-hint: #6f6f6f;
-  --text-color-added: #2bda77;
-  --text-color-ignored: #777;
-  --text-color-modified: #ff982d;
-  --text-color-removed: #e35d5d;
-  --text-color-renamed: #5293d8;
-  --text-color-conflicted: #e35d5d;
+  --text-color-faded: rgba(181, 181, 181, 0.2);
+  --text-color-hint: var(--text-color-subtle);
+  --text-color-added: var(--text-color-success);
+  --text-color-ignored: var(--text-color-subtle);
+  --text-color-modified: var(--text-color-warning);
+  --text-color-removed: var(--text-color-error);
+  --text-color-renamed: var(--text-color-info);
+  --text-color-conflicted: var(--text-color-error);
 
   /* --- extended: readable text on colored backgrounds --- */
-  --text-color-on-info: #fff;
-  --text-color-on-success: #fff;
+  --text-color-on-info: #001a2b;
+  --text-color-on-success: #062b18;
   --text-color-on-warning: #2b1a00;
   --text-color-on-error: #fff;
 
@@ -112,17 +111,17 @@
   --level-3-color-active: #282828;
 
   /* --- extended: accent --- */
-  --accent-color: #5293d8;
+  --accent-color: #3979ba;
   --accent-text-color: #fff;
-  --accent-bg-color: #4182c4;
+  --accent-bg-color: #3979ba;
   --accent-bg-text-color: #fff;
-  --accent-only-text-color: #5293d8;
+  --accent-only-text-color: var(--text-color-info);
 
   /* --- extended: components --- */
   --badge-background-color: rgba(255, 255, 255, 0.14);
   --button-text-color-selected: #fff;
   --button-border-color-selected: rgba(0, 0, 0, 0.5);
-  --checkbox-background-color: rgba(65, 130, 196, 0.33);
+  --checkbox-background-color: rgba(57, 121, 186, 0.33);
   --input-background-color-focus: #2d2f31;
   --input-selection-color: #393b3f;
   --input-selection-color-focus: #408cbf;
@@ -137,7 +136,7 @@
   --tab-background-color-editor: #222;
   --tab-inactive-status-added: rgba(43, 218, 119, 0.55);
   --tab-inactive-status-modified: rgba(255, 152, 45, 0.55);
-  --tab-inactive-status-conflicted: rgba(227, 93, 93, 0.55);
+  --tab-inactive-status-conflicted: rgba(233, 106, 106, 0.55);
   --tooltip-background-color: #fff;
   --tooltip-text-color: #333;
   --tooltip-text-key-color: #555;

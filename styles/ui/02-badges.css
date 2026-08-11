@@ -2,4 +2,17 @@
   font-weight: normal;
   color: var(--text-color-highlight);
   background: var(--badge-background-color);
+
+  &.badge-info {
+    color: var(--text-color-on-info);
+  }
+  &.badge-success {
+    color: var(--text-color-on-success);
+  }
+  &.badge-warning {
+    color: var(--text-color-on-warning);
+  }
+  &.badge-error {
+    color: var(--text-color-on-error);
+  }
 }

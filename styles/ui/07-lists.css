@@ -58,7 +58,7 @@
       color: var(--text-color-subtle);
     }
     &.selected .secondary-line {
-      color: var(--text-color);
+      color: var(--text-color-selected);
       text-shadow: none;
     }
   }

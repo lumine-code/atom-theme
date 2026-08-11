@@ -7,10 +7,16 @@
  * The tabs package owns the ✕ and the modified/deleted/conflicted marker
  * (.tab-status), so neither is restyled here beyond placement. */
 
+.tab-bar,
+.tab-bar + .item-views {
+  /* Shared by the bar and its sibling floor; a custom property declared only
+     on the bar would not inherit across to `.item-views`. */
+  --tab-floor-height: 5px;
+}
+
 .tab-bar {
   --tab-skew: 30deg;
   --tab-top-padding: 5px;
-  --tab-floor-height: 5px;
   --tab-edge-width: 25px;
 
   position: relative;
@@ -188,10 +194,10 @@
 .tab-bar + .item-views::before {
   content: "";
   position: absolute;
-  top: -5px;
+  top: calc(-1 * var(--tab-floor-height));
   left: 0;
   right: 0;
-  height: 5px;
+  height: var(--tab-floor-height);
   background-color: var(--tab-background-color-active);
   border-top: 1px solid var(--tab-border-color);
   border-bottom: 1px solid var(--tab-bar-bottom-border-color);

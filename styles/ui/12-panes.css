@@ -8,7 +8,10 @@ lumine-pane-container {
     position: relative;
     background-color: hsl(from var(--app-background-color) h s calc(l + 4));
 
-    &:focus {
+    /* PaneElement keeps `.active` in sync with the model. Focus is immediately
+       forwarded to the active item, so `:focus` alone only matched briefly. */
+    &.active,
+    &:focus-within {
       background-color: var(--app-background-color);
     }
   }

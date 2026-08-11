@@ -5,16 +5,25 @@
  * property that each variant sets, with the gradient derived from it. */
 
 .btn {
-  color: var(--text-color);
-  background-color: transparent;
-  background-image: linear-gradient(
+  --btn-resting-text-color: var(--text-color);
+  --btn-selected-text-color: var(--button-text-color-selected);
+  --btn-resting-background-image: linear-gradient(
     var(--button-background-color),
     hsl(from var(--button-background-color) h s calc(l - 6))
   );
+  --btn-selected-background-image: linear-gradient(
+    hsl(from var(--button-background-color-selected) h s calc(l - 6)),
+    var(--button-background-color-selected)
+  );
+
+  color: var(--btn-resting-text-color);
+  background-color: transparent;
+  background-image: var(--btn-resting-background-image);
   box-shadow: inset 0 0 0 1px var(--button-border-color);
 
-  &:focus {
-    color: var(--text-color);
+  &:focus,
+  &.focus {
+    color: var(--btn-resting-text-color);
   }
 
   &:hover {
@@ -25,7 +34,8 @@
     );
   }
 
-  &:active {
+  &:active,
+  &.active {
     background-image: linear-gradient(
       hsl(from var(--button-background-color) h s calc(l - 6)),
       var(--button-background-color)
@@ -37,11 +47,8 @@
 
   /* The selected button reads as pressed: the gradient runs the other way. */
   &.selected {
-    color: var(--button-text-color-selected);
-    background-image: linear-gradient(
-      hsl(from var(--button-background-color-selected) h s calc(l - 6)),
-      var(--button-background-color-selected)
-    );
+    color: var(--btn-selected-text-color);
+    background-image: var(--btn-selected-background-image);
     box-shadow: inset 0 0 0 1px var(--button-border-color-selected);
   }
 
@@ -59,15 +66,19 @@
 .btn.btn-primary,
 .btn.btn-info {
   --btn-color: var(--background-color-info);
+  --btn-semantic-text-color: var(--text-color-on-info);
 }
 .btn.btn-success {
   --btn-color: var(--background-color-success);
+  --btn-semantic-text-color: var(--text-color-on-success);
 }
 .btn.btn-warning {
   --btn-color: var(--background-color-warning);
+  --btn-semantic-text-color: var(--text-color-on-warning);
 }
 .btn.btn-error {
   --btn-color: var(--background-color-error);
+  --btn-semantic-text-color: var(--text-color-on-error);
 }
 
 .btn.btn-primary,
@@ -75,30 +86,70 @@
 .btn.btn-success,
 .btn.btn-warning,
 .btn.btn-error {
-  color: var(--text-color-selected);
-  background-color: transparent;
-  background-image: linear-gradient(
-    hsl(from var(--btn-color) h s calc(l - 10)),
-    hsl(from var(--btn-color) h s calc(l - 15))
+  --btn-resting-text-color: var(--btn-semantic-text-color);
+  --btn-selected-text-color: var(--btn-semantic-text-color);
+  --btn-resting-background-image: linear-gradient(
+    var(--btn-color),
+    hsl(from var(--btn-color) h s calc(l - 5))
   );
+  --btn-selected-background-image: linear-gradient(
+    hsl(from var(--btn-color) h s calc(l + 3)),
+    var(--btn-color)
+  );
+
+  color: var(--btn-resting-text-color);
+  background-color: transparent;
+  background-image: var(--btn-resting-background-image);
   box-shadow: inset 0 0 0 1px rgb(from var(--btn-color) r g b / 50%);
 
   &:hover,
-  &:focus {
-    color: var(--text-color-selected);
-    background-image: linear-gradient(var(--btn-color), hsl(from var(--btn-color) h s calc(l - 5)));
+  &:focus,
+  &.focus {
+    color: var(--btn-semantic-text-color);
+    background-image: linear-gradient(hsl(from var(--btn-color) h s calc(l + 3)), var(--btn-color));
   }
 
-  &:active {
-    background-image: linear-gradient(
-      hsl(from var(--btn-color) h s calc(l - 15)),
-      hsl(from var(--btn-color) h s calc(l - 10))
-    );
+  &:active,
+  &.active {
+    background-image: linear-gradient(hsl(from var(--btn-color) h s calc(l - 5)), var(--btn-color));
   }
 
   &.selected,
   &.selected:hover {
-    color: var(--text-color-selected);
-    background-image: linear-gradient(hsl(from var(--btn-color) h s calc(l - 5)), var(--btn-color));
+    color: var(--btn-semantic-text-color);
+    background-image: var(--btn-selected-background-image);
+  }
+}
+
+/* Disabled buttons keep the resting chrome even when the pointer crosses
+   them. Core resets background-color, but this theme draws its state with a
+   background-image, so that image must be reset here as well. Keeping the
+   images in custom properties lets contextual variants (such as panel-heading
+   buttons) supply their own resting chrome without duplicating these states. */
+.btn {
+  &.disabled:not(.selected),
+  &[disabled]:not(.selected),
+  fieldset[disabled] &:not(.selected) {
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      color: var(--btn-resting-text-color);
+      background-image: var(--btn-resting-background-image);
+    }
+  }
+
+  &.selected.disabled,
+  &.selected[disabled],
+  fieldset[disabled] &.selected {
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      color: var(--btn-selected-text-color);
+      background-image: var(--btn-selected-background-image);
+    }
   }
 }

@@ -34,16 +34,16 @@
   --syntax-gutter-background-color-selected: rgba(255, 255, 134, 0.34);
 
   /* --- git diff --- */
-  --syntax-color-added: #718c00;
-  --syntax-color-modified: #ff982d;
+  --syntax-color-added: #5b7000;
+  --syntax-color-modified: #9a5700;
   --syntax-color-removed: #dd1144;
-  --syntax-color-renamed: #5293d8;
+  --syntax-color-renamed: #2c69a6;
 
   /* --- language entities --- */
   --syntax-color-variable: #008080;
-  --syntax-color-constant: #009999;
+  --syntax-color-constant: #007a7a;
   --syntax-color-property: #333;
-  --syntax-color-value: #009999;
+  --syntax-color-value: #007a7a;
   --syntax-color-function: #990000;
   --syntax-color-method: #990000;
   --syntax-color-class: #606aa1;
@@ -51,9 +51,9 @@
   --syntax-color-tag: #008080;
   --syntax-color-attribute: #445588;
   --syntax-color-import: #222;
-  --syntax-color-snippet: #009999;
+  --syntax-color-snippet: #007a7a;
   --syntax-color-string: #dd1144;
-  --syntax-color-comment: #999988;
+  --syntax-color-comment: #73736c;
 
   /* --- terminal --- */
   --terminal-selection-background-color: #afc4da;
@@ -93,12 +93,12 @@
   --classic-ink-strong: #111;
   --classic-slate: #333;
   --classic-teal: #008080;
-  --classic-cyan: #009999;
+  --classic-cyan: #007a7a;
   --classic-crimson: #dd1144;
   --classic-maroon: #990000;
   --classic-navy: #445588;
   --classic-indigo: #606aa1;
-  --classic-gray: #999988;
-  --classic-gray-mid: #888;
+  --classic-gray: #73736c;
+  --classic-gray-mid: #707070;
   --classic-fold: #e87b00;
 }

@@ -60,11 +60,17 @@ lumine-panel,
   .btn {
     padding-left: 8px;
     padding-right: 8px;
-    color: hsl(from var(--text-color) h s calc(l + 10));
-    background-image: linear-gradient(
+  }
+
+  .btn:not(.btn-primary, .btn-info, .btn-success, .btn-warning, .btn-error) {
+    --btn-resting-text-color: hsl(from var(--text-color) h s calc(l + 10));
+    --btn-resting-background-image: linear-gradient(
       hsl(from var(--button-background-color) h s calc(l + 10)),
       hsl(from var(--button-background-color) h s calc(l + 4))
     );
+
+    color: var(--btn-resting-text-color);
+    background-image: var(--btn-resting-background-image);
 
     &:hover {
       color: var(--text-color-highlight);
@@ -76,10 +82,7 @@ lumine-panel,
 
     &.selected {
       color: var(--button-text-color-selected);
-      background-image: linear-gradient(
-        hsl(from var(--button-background-color-selected) h s calc(l + 4)),
-        hsl(from var(--button-background-color-selected) h s calc(l + 10))
-      );
+      background-image: var(--btn-selected-background-image);
     }
   }
 }

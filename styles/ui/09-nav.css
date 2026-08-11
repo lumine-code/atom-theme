@@ -15,7 +15,9 @@
       border: none;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      color: var(--text-color-selected);
+      /* These links sit on a subtle/active tab shade, not on the saturated
+         selection background that --text-color-selected is paired with. */
+      color: var(--text-color-highlight);
       background-color: var(--background-color-highlight);
     }
 

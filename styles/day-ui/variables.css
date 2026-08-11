@@ -12,12 +12,14 @@
 :root {
   /* --- text --- */
   --text-color: #444;
-  --text-color-subtle: #999;
+  /* Classic #999 is only 2.4:1 on the overlay surface, making empty-state and
+     help text look disabled. This keeps the neutral hue but clears 4.5:1. */
+  --text-color-subtle: #686868;
   --text-color-highlight: #000;
   --text-color-selected: #fff;
-  --text-color-info: #5293d8;
-  --text-color-success: #45a815;
-  --text-color-warning: #cd8e00;
+  --text-color-info: #2c69a6;
+  --text-color-success: #2c770c;
+  --text-color-warning: #8a5f00;
   --text-color-error: #c00;
 
   /* --- background --- */
@@ -26,7 +28,7 @@
   --background-color-warning: #ff4800;
   --background-color-error: #c00;
   --background-color-highlight: rgba(0, 0, 0, 0.1);
-  --background-color-selected: #6aa5e9;
+  --background-color-selected: #3979ba;
   --app-background-color: #ccc;
 
   /* --- base --- */
@@ -48,7 +50,7 @@
   --overlay-border-color: #9f9f9f;
   --button-background-color: #f4f4f4;
   --button-background-color-hover: #fff;
-  --button-background-color-selected: #888;
+  --button-background-color-selected: #6f6f6f;
   --button-border-color: rgba(0, 0, 0, 0.15);
   --tab-bar-background-color: #d8d8d8;
   --tab-bar-border-color: #ddd;
@@ -84,18 +86,18 @@
 
   /* --- extended: text --- */
   --text-color-faded: rgba(68, 68, 68, 0.2);
-  --text-color-hint: #8a8a8a;
-  --text-color-added: #45a815;
-  --text-color-ignored: #999;
-  --text-color-modified: #cd8e00;
-  --text-color-removed: #c00;
-  --text-color-renamed: #5293d8;
-  --text-color-conflicted: #c00;
+  --text-color-hint: var(--text-color-subtle);
+  --text-color-added: var(--text-color-success);
+  --text-color-ignored: var(--text-color-subtle);
+  --text-color-modified: var(--text-color-warning);
+  --text-color-removed: var(--text-color-error);
+  --text-color-renamed: var(--text-color-info);
+  --text-color-conflicted: var(--text-color-error);
 
   /* --- extended: readable text on colored backgrounds --- */
-  --text-color-on-info: #fff;
-  --text-color-on-success: #fff;
-  --text-color-on-warning: #fff;
+  --text-color-on-info: #001a2b;
+  --text-color-on-success: #062b18;
+  --text-color-on-warning: #1f0b00;
   --text-color-on-error: #fff;
 
   /* --- extended: background levels --- */
@@ -106,17 +108,17 @@
   --level-3-color-active: #cfcfcf;
 
   /* --- extended: accent --- */
-  --accent-color: #5293d8;
+  --accent-color: #3979ba;
   --accent-text-color: #fff;
-  --accent-bg-color: #6aa5e9;
+  --accent-bg-color: #3979ba;
   --accent-bg-text-color: #fff;
-  --accent-only-text-color: #3d7fc4;
+  --accent-only-text-color: var(--text-color-info);
 
   /* --- extended: components --- */
   --badge-background-color: rgba(0, 0, 0, 0.12);
   --button-text-color-selected: #fff;
   --button-border-color-selected: rgba(0, 0, 0, 0.15);
-  --checkbox-background-color: rgba(106, 165, 233, 0.33);
+  --checkbox-background-color: rgba(57, 121, 186, 0.33);
   --input-background-color-focus: #fff;
   --input-selection-color: rgba(0, 0, 0, 0.12);
   --input-selection-color-focus: #99d6ff;
@@ -129,8 +131,8 @@
   --tab-text-color-active: #000;
   --tab-text-color-editor: #000;
   --tab-background-color-editor: #f0f0f0;
-  --tab-inactive-status-added: rgba(69, 168, 21, 0.55);
-  --tab-inactive-status-modified: rgba(205, 142, 0, 0.55);
+  --tab-inactive-status-added: rgba(44, 119, 12, 0.55);
+  --tab-inactive-status-modified: rgba(138, 95, 0, 0.55);
   --tab-inactive-status-conflicted: rgba(204, 0, 0, 0.55);
   --tooltip-background-color: #333;
   --tooltip-text-color: #fff;

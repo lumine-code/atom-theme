@@ -206,7 +206,7 @@
 
   /* > quote */
   &.syntax--quote {
-    color: #555;
+    color: var(--classic-gray);
   }
 
   /* `raw` */
@@ -216,7 +216,7 @@
 
   /* url.com (path) */
   &.syntax--link {
-    color: #555;
+    color: var(--classic-gray);
   }
 
   /* [alt] ![alt] */

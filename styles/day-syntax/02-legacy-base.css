@@ -70,7 +70,7 @@
   }
 
   &.syntax--special-method {
-    color: #0086b3;
+    color: #00749c;
   }
 }
 
@@ -107,7 +107,7 @@
   }
 
   &.syntax--name.syntax--filename.syntax--find-in-files {
-    color: #e6db74;
+    color: #796900;
   }
 }
 
@@ -124,11 +124,11 @@
 }
 
 .syntax--invalid {
-  color: #f8f8f0;
+  color: #002b3a;
   background-color: #00a8c6;
 
   &.syntax--deprecated {
-    color: #f8f8f0;
+    color: #1e2800;
     background-color: #8fbe00;
   }
 }

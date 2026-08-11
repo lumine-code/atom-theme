@@ -17,7 +17,7 @@
   }
 
   &.syntax--other.syntax--inherited-class {
-    color: #9b5c2e;
+    color: #c47d48;
   }
 }
 
@@ -156,7 +156,7 @@
   }
 
   &.syntax--cast {
-    color: #676767;
+    color: var(--classic-gray);
   }
 
   &.syntax--sgml.syntax--html .syntax--meta.syntax--doctype,
@@ -249,7 +249,7 @@
   }
 
   .syntax--link {
-    color: #555;
+    color: var(--classic-gray);
   }
 
   .syntax--punctuation.syntax--definition.syntax--list-item {
@@ -258,7 +258,7 @@
 
   .syntax--variable.syntax--list,
   .syntax--support.syntax--quote {
-    color: #555;
+    color: var(--classic-gray);
   }
 
   .syntax--link .syntax--entity,
@@ -285,10 +285,10 @@
   }
 
   .syntax--link {
-    color: #555;
+    color: var(--classic-gray);
 
     .syntax--string {
-      color: #555;
+      color: var(--classic-gray);
 
       &.syntax--title {
         color: #ddd;

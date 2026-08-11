@@ -10,7 +10,7 @@ about.
 ## Features
 
 - **Trapezoid tabs**: the signature sloped tab edges, drawn with skewed pseudo-elements over a recessed tab bar.
-- **Original palettes**: every colour is the classic value, with each Less colour function resolved to a concrete one.
+- **Classic palettes**: the original hues and relationships, with targeted contrast corrections for small UI text.
 - **Day and night pair**: `atom-day-ui`/`atom-day-syntax` and `atom-night-ui`/`atom-night-syntax` follow the system theme mode out of the box.
 - **Standalone**: ships its own complete UI layer and syntax rules, so it does not inherit from any other theme package.
 - **Gradient chrome**: gradient buttons, gradient panel headings, and the striped progress bar of the era.

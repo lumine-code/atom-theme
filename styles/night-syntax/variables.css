@@ -36,7 +36,7 @@
   /* --- git diff --- */
   --syntax-color-added: #a8ff60;
   --syntax-color-modified: #e9c062;
-  --syntax-color-removed: #cc6666;
+  --syntax-color-removed: #ce6868;
   --syntax-color-renamed: #96cbfe;
 
   /* --- language entities --- */
@@ -62,7 +62,7 @@
   --terminal-result-marker-color: #888;
   --terminal-result-marker-color-selected: #fff;
   --terminal-color-black: #41454a;
-  --terminal-color-red: #cc6666;
+  --terminal-color-red: #ce6868;
   --terminal-color-green: #99cc99;
   --terminal-color-yellow: #dad085;
   --terminal-color-blue: #62b1fe;
