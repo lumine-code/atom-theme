@@ -58,7 +58,6 @@ lumine-text-editor {
       background-color: var(--syntax-selection-color);
     }
 
-    .line-number.cursor-line,
     .line.cursor-line {
       background-color: var(--syntax-gutter-background-color-selected);
     }
