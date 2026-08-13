@@ -38,8 +38,7 @@ lumine-text-editor {
       color: var(--syntax-gutter-text-color);
       -webkit-font-smoothing: antialiased;
 
-      &.cursor-line,
-      &.cursor-line-no-selection {
+      &.cursor-line {
         color: var(--syntax-gutter-text-color-selected);
         background-color: var(--syntax-gutter-background-color-selected);
       }
