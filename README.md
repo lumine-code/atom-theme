@@ -2,10 +2,7 @@
 
 The classic Atom day and night UI and syntax themes.
 
-A port of the original `atom-dark` and `atom-light` themes, converted from Less
-to CSS custom properties and brought up to the current DOM. The palettes are the
-originals; what changed is everything the classic themes could not have known
-about.
+A port of the original `atom-dark` and `atom-light` themes, converted from Less to CSS custom properties and brought up to the current DOM. The palettes are the originals; what changed is everything the classic themes could not have known about.
 
 ## Features
 
@@ -19,12 +16,11 @@ about.
 
 ## Installation
 
-To install `atom-theme` search for _atom-theme_ in the Install pane of the Lumine settings or run `lumine --install lumine-code/atom-theme`.
+To install `atom-theme` search for it in the Install pane of the Lumine settings, or run the command `lumine --install lumine-code/atom-theme`.
 
 ## Theme pack
 
-The package declares its four themes as the **Atom** pack. Use
-`theme-selector:toggle` to preview and select it.
+The package declares its four themes as the **Atom** pack. Use `theme-selector:toggle` to preview and select it.
 
 ## Contributing
 
