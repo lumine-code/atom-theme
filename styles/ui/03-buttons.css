@@ -63,7 +63,13 @@
 
 /* Variants ------------------------------------ */
 
-.btn.btn-primary,
+/* Primary is the accent button, as it is in every other theme here: the one
+   action a surface wants clicked, painted from the accent rather than from the
+   informational blue that `btn-info` carries. */
+.btn.btn-primary {
+  --btn-color: var(--accent-bg-color);
+  --btn-semantic-text-color: var(--accent-bg-text-color);
+}
 .btn.btn-info {
   --btn-color: var(--background-color-info);
   --btn-semantic-text-color: var(--text-color-on-info);
