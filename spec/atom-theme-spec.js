@@ -300,6 +300,43 @@ describe("atom-theme", () => {
     }
   });
 
+  it("overlays the focused cursor line without replacing its decoration background", async () => {
+    await lumine.packages.activatePackage("atom-theme");
+    await lumine.packages.activatePackage("atom-day-syntax");
+    const decorationStyles = lumine.styles.addStyleSheet(
+      "lumine-text-editor .navigation-marker { background: rgb(12, 34, 56); }",
+      { priority: 0 },
+    );
+
+    const editor = document.createElement("lumine-text-editor");
+    editor.className = "is-focused";
+    const line = document.createElement("div");
+    line.className = "line cursor-line navigation-marker";
+    editor.appendChild(line);
+    document.body.appendChild(editor);
+
+    try {
+      const style = getComputedStyle(line);
+      expect(style.backgroundColor).toBe("rgb(12, 34, 56)");
+      expect(style.boxShadow).not.toBe("none");
+      const shadowColor = style.boxShadow.slice(0, style.boxShadow.indexOf(")") + 1);
+      const alpha = /[,/]\s*([\d.]+)\s*\)$/.exec(shadowColor);
+      expect(alpha).not.toBeNull();
+      expect(Number(alpha[1])).toBeLessThan(1);
+
+      for (const attribute of ["mini", "input"]) {
+        editor.setAttribute(attribute, "");
+        const inputStyle = getComputedStyle(line);
+        expect(inputStyle.backgroundColor).toBe("rgba(0, 0, 0, 0)");
+        expect(inputStyle.boxShadow).toBe("none");
+        editor.removeAttribute(attribute);
+      }
+    } finally {
+      editor.remove();
+      decorationStyles.dispose();
+    }
+  });
+
   it("keeps class-based and disabled button states consistent", async () => {
     await lumine.packages.activatePackage("atom-theme");
     await lumine.packages.activatePackage("atom-day-ui");

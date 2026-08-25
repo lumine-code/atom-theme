@@ -59,7 +59,7 @@ lumine-text-editor {
     }
 
     .line.cursor-line {
-      background-color: var(--syntax-gutter-background-color-selected);
+      box-shadow: inset 0 0 0 100vmax var(--syntax-gutter-background-color-selected);
     }
   }
 }
