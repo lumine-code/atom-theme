@@ -2,6 +2,9 @@
 
 The classic Atom day and night UI and syntax themes.
 
+> [!WARNING]
+> **This theme is deprecated.** It is no longer distributed through the Lumine package catalog or maintained. This repository is archived and no longer receives updates.
+
 A port of the original `atom-dark` and `atom-light` themes, converted from Less to CSS custom properties and brought up to the current DOM. The palettes are the originals; what changed is everything the classic themes could not have known about.
 
 ## Features
