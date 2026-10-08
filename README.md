@@ -2,6 +2,8 @@
 
 The classic Atom day and night UI and syntax themes.
 
+Fork of [pulsar-edit/pulsar](https://github.com/pulsar-edit/pulsar) (`packages/atom-dark-syntax`).
+
 > [!WARNING]
 > **This theme is deprecated.** It is no longer distributed through the Lumine package catalog or maintained. This repository is archived and no longer receives updates.
 
