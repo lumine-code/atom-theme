@@ -1,6 +1,6 @@
 # atom-theme
 
-The classic Atom day and night UI and syntax themes.
+The classic day and night UI and syntax themes.
 
 Fork of [pulsar-edit/pulsar](https://github.com/pulsar-edit/pulsar) (`packages/atom-dark-syntax`).
 
